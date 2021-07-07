@@ -48,3 +48,48 @@ Integer
      ├─ UInt64
      └─ UInt8
 ```
+
+Concrete types can be filtered off and `ASCII`-only outputs can be produced:
+
+```julia
+julia> print(join(tt(Number, uni=false, concrete=false), ""))
+Number
+ \-- Real
+     +-- AbstractFloat
+     +-- AbstractIrrational
+     \-- Integer
+         +-- Signed
+         \-- Unsigned
+```
+
+# About
+
+## Author
+
+Prof. C. Naaktgeboren, PhD. [Lattes](http://lattes.cnpq.br/8621139258082919).
+
+Federal University of Technology, Paraná
+[(site)](http://portal.utfpr.edu.br/english), Guarapuava Campus.
+
+`NaaktgeborenC <dot!> PhD {at!} gmail [dot!] com`
+
+## License
+
+This project is [licensed](https://github.com/jengtherm/EngTherm.jl/blob/master/LICENSE) under
+the MIT license.
+
+## Citations
+
+How to cite this project:
+
+```bibtex
+@Misc{2021-NaaktgeborenC-typeTree,
+  author       = {C. Naaktgeboren},
+  title        = {{typeTree.jl} -- Julia type tree displaying micro package},
+  howpublished = {Online},
+  year         = {2021},
+  journal      = {GitHub repository},
+  publisher    = {GitHub},
+  url          = {https://github.com/cnaak/typeTree.jl},
+}
+```
