@@ -4,7 +4,7 @@
 
 using InteractiveUtils: subtypes
 
-function tt(TY::Type, pref=("",); uni=true, concrete=false)
+function tt(TY::Type, pref=("",); uni=true, concrete=true)
     ret = Array{String,1}()
     ELL, FRK, BAR = uni ? (" └─ ", " ├─ ", " │  ") : (" \\-- ", " +-- ", " |  ")
     SPC = "    "
