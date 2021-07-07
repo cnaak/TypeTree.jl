@@ -4,6 +4,16 @@
 
 using InteractiveUtils: subtypes
 
+"""
+`function tt(TY::Type, pref=("",); uni=true, concrete=true)`\n
+Returns a `Vector{String}` of type entries formatted as a tree for human (programmer)
+inspection.
+
+- The `TY` argument is the type for which to produce the tree;
+- The `pref` optional argument is a text prefix;
+- The `uni` optional keyword argument controls whether Unicode characters will be used;
+- The `concrete` optional keyword argument controls whether to filter off concrete subtypes.
+"""
 function tt(TY::Type, pref=("",); uni=true, concrete=true)
     ret = Array{String,1}()
     ELL, FRK, BAR = uni ? (" └─ ", " ├─ ", " │  ") : (" \\-- ", " +-- ", " |  ")
