@@ -28,4 +28,23 @@ julia> tt(Signed)
  " └─ Int8\n"
 ```
 
+Its output can be simply read on the Julia `REPL` screen, or be printed:
 
+```julia
+julia> print(join(tt(Integer), ""))
+Integer
+ ├─ Bool
+ ├─ Signed
+ │   ├─ BigInt
+ │   ├─ Int128
+ │   ├─ Int16
+ │   ├─ Int32
+ │   ├─ Int64
+ │   └─ Int8
+ └─ Unsigned
+     ├─ UInt128
+     ├─ UInt16
+     ├─ UInt32
+     ├─ UInt64
+     └─ UInt8
+```
