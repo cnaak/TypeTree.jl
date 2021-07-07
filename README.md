@@ -75,7 +75,7 @@ Federal University of Technology, Paraná
 
 ## License
 
-This project is [licensed](https://github.com/jengtherm/EngTherm.jl/blob/master/LICENSE) under
+This project is [licensed](https://github.com/cnaak/typeTree.jl/blob/main/LICENSE) under
 the MIT license.
 
 ## Citations
