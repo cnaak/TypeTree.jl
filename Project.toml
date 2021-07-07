@@ -1,7 +1,7 @@
 name = "typeTree"
 uuid = "2c8676e6-9955-479e-abeb-bc4668c9d158"
 authors = ["C Naaktgeboren <NaaktgeborenC.PhD@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 InteractiveUtils = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
