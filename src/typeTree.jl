@@ -1,5 +1,11 @@
+#==============================================================================================#
+#                                      typeTree.jl module                                      #
+#==============================================================================================#
+
 module typeTree
 
-greet() = print("Hello World!")
+# Includes:
+include("interface.jl")
+include("functions.jl")
 
 end # module
