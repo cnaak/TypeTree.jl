@@ -1,13 +1,13 @@
-# typeTree.jl
+# TypeTree.jl
 Julia type tree displaying micro package
 
 # Description
-`typeTree.jl` is a microscopic package written in the Julia language aimed at providing the
+`TypeTree.jl` is a microscopic package written in the Julia language aimed at providing the
 simple utility of text-based visual type tree inspection to the human eye, i.e., programmers. It
 defines and exports the `tt` function:
 
 ```julia
-julia> using typeTree
+julia> using TypeTree
 
 julia> tt
 tt (generic function with 2 methods)
@@ -75,7 +75,7 @@ Federal University of Technology, Paraná
 
 ## License
 
-This project is [licensed](https://github.com/cnaak/typeTree.jl/blob/main/LICENSE) under
+This project is [licensed](https://github.com/cnaak/TypeTree.jl/blob/main/LICENSE) under
 the MIT license.
 
 ## Citations
@@ -83,13 +83,13 @@ the MIT license.
 How to cite this project:
 
 ```bibtex
-@Misc{2021-NaaktgeborenC-typeTree,
+@Misc{2021-NaaktgeborenC-TypeTree,
   author       = {C. Naaktgeboren},
-  title        = {{typeTree.jl} -- Julia type tree displaying micro package},
+  title        = {{TypeTree.jl} -- Julia type tree displaying micro package},
   howpublished = {Online},
   year         = {2021},
   journal      = {GitHub repository},
   publisher    = {GitHub},
-  url          = {https://github.com/cnaak/typeTree.jl},
+  url          = {https://github.com/cnaak/TypeTree.jl},
 }
 ```
