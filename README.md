@@ -62,6 +62,26 @@ Number
          \-- Unsigned
 ```
 
+Type names can be displayed without module prefixes by using the `mod=` option.
+
+```julia
+julia> print(tt(Base.LibuvStream)...)
+Base.LibuvStream
+ ├─ Base.BufferStream
+ ├─ Base.PipeEndpoint
+ ├─ Base.TTY
+ ├─ Sockets.TCPSocket
+ └─ Sockets.UDPSocket
+
+julia> print(tt(Base.LibuvStream; mod=Base)...)
+LibuvStream
+ ├─ BufferStream
+ ├─ PipeEndpoint
+ ├─ TTY
+ ├─ Sockets.TCPSocket
+ └─ Sockets.UDPSocket
+```
+
 # About
 
 ## Author
