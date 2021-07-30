@@ -10,9 +10,13 @@ using Test
 #                                          Test Data                                           #
 #==============================================================================================#
 
+module M
+
 #----------------------------------------------------------------------------------------------#
 #                                        Abstract types                                        #
 #----------------------------------------------------------------------------------------------#
+
+export Ab
 
 abstract type tyTree <: Any end
 abstract type A <: tyTree end
@@ -26,29 +30,51 @@ abstract type Ba <: B end
 #                                        Concrete types                                        #
 #----------------------------------------------------------------------------------------------#
 
+export Aα
+
 struct Aα <: A end
 struct Aaα <: Aa end
 struct Aaβ <: Aa end
 struct Abα <: Ab end
+
+end # module M
 
 
 #==============================================================================================#
 #                                            Tests                                             #
 #==============================================================================================#
 
+using Main.M
+
 @testset "quiz.type.abstract:                                                     " begin
     # All types
-    @test length(tt(A)) == 7
-    @test length(tt(Aa)) == 3
+    @test length(tt(M.A)) == 7
+    @test length(tt(M.Aa)) == 3
     @test length(tt(Ab)) == 2
-    @test length(tt(B)) == 2
-    @test length(tt(Ba)) == 1
-    @test length(tt(tyTree)) == 10
+    @test length(tt(M.B)) == 2
+    @test length(tt(M.Ba)) == 1
+    @test length(tt(M.tyTree)) == 10
     # Abstract types only
-    @test length(tt(A, concrete=false)) == 3
-    @test length(tt(Aa, concrete=false)) == 1
+    @test length(tt(M.A, concrete=false)) == 3
+    @test length(tt(M.Aa, concrete=false)) == 1
     @test length(tt(Ab, concrete=false)) == 1
-    @test length(tt(B, concrete=false)) == 2
-    @test length(tt(Ba, concrete=false)) == 1
-    @test length(tt(tyTree, concrete=false)) == 6
+    @test length(tt(M.B, concrete=false)) == 2
+    @test length(tt(M.Ba, concrete=false)) == 1
+    @test length(tt(M.tyTree, concrete=false)) == 6
+
+    @test contains(join(tt(M.tyTree)), " Main.M.Aa\n")
+    @test contains(join(tt(M.tyTree)), " Ab\n")
+    @test contains(join(tt(M.tyTree)), " Aα\n")
+
+    @test !contains(join(tt(M.tyTree)), " Aa\n")
+    @test !contains(join(tt(M.tyTree)), " Main.M.Ab\n")
+    @test !contains(join(tt(M.tyTree)), " Main.M.Aα\n")
+
+    @test contains(join(tt(M.tyTree; mod=Main.M)), " Aa\n")
+    @test contains(join(tt(M.tyTree; mod=Main.M)), " Ab\n")
+    @test contains(join(tt(M.tyTree; mod=Main.M)), " Aα\n")
+
+    @test !contains(join(tt(M.tyTree; mod=Main.M)), " Main.M.Aa\n")
+    @test !contains(join(tt(M.tyTree; mod=Main.M)), " Main.M.Ab\n")
+    @test !contains(join(tt(M.tyTree; mod=Main.M)), " Main.M.Aα\n")
 end
