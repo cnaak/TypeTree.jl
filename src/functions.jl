@@ -22,7 +22,7 @@ function tt(TY::Type, pref=("",); uni=true, concrete=true, mod=nothing)
     LEN = length(pref) - 1
     PREF = LEN > 0 ? ( i == ELL ? SPC : i == FRK ? BAR : i for i in pref[1:LEN]) : ("",)
     append!(ret, ["$(join((PREF..., pref[end])))$(typename(TY, mod))\n"])
-    ST = [i for i in subtypes(TY) if isabstracttype(i) || concrete]
+    ST = [i for i in subtypes(TY) if (isabstracttype(i) || concrete) && i !== Any]
     LE = length(ST)
     for i in 1:LE
         append!(
