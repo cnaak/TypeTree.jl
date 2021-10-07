@@ -77,4 +77,7 @@ using Main.M
     @test !contains(join(tt(M.tyTree; mod=Main.M)), " Main.M.Aa\n")
     @test !contains(join(tt(M.tyTree; mod=Main.M)), " Main.M.Ab\n")
     @test !contains(join(tt(M.tyTree; mod=Main.M)), " Main.M.Aα\n")
+
+    # Any type: check for lack of infinite recursion
+    @test length(tt(Any)) >= 0
 end
